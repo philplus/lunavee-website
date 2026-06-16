@@ -258,6 +258,35 @@ footer{background:var(--ink);padding:64px 80px 40px}
 .newsletter-form button{padding:15px 34px;background:#fff;color:var(--rose);border:none;font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:.3s}.newsletter-form button:hover{background:var(--ink);color:#fff}
 .newsletter .ns-note{font-size:.7rem;color:rgba(255,255,255,.6);margin-top:18px}
 
+/* ── Ingredients page: feature rows ── */
+.ing-hero{height:420px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center}
+.ing-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ing-hero-overlay{position:absolute;inset:0;background:rgba(44,31,36,0.4)}
+.ing-hero h1{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:300;font-style:italic;color:#fff;position:relative;z-index:2;margin-bottom:12px}
+.ing-hero p{font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.75);position:relative;z-index:2}
+.ing-intro{padding:90px 80px 30px;max-width:820px;margin:0 auto;text-align:center}
+.ing-intro h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;line-height:1.25;color:var(--ink);margin-bottom:24px}.ing-intro h2 em{font-style:italic;color:var(--rose)}
+.ing-intro p{font-size:0.92rem;font-weight:300;line-height:1.9;color:var(--muted)}
+.feature-row{display:grid;grid-template-columns:1fr 1fr;min-height:480px}
+.feature-row-img{overflow:hidden}.feature-row-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s}.feature-row-img:hover img{transform:scale(1.04)}
+.feature-row.alt{background:var(--blush)}
+.feature-row.reverse .feature-row-img{order:2}
+.feature-row-content{padding:72px 80px;display:flex;flex-direction:column;justify-content:center}
+.feature-num{font-family:var(--serif);font-style:italic;font-size:1.9rem;color:var(--rose-light);line-height:1;margin-bottom:14px}
+.feature-row-content .sub{font-size:0.64rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--rose);margin-bottom:14px}
+.feature-row-content h3{font-family:var(--serif);font-size:clamp(1.7rem,2.6vw,2.5rem);font-weight:300;color:var(--ink);line-height:1.12;margin-bottom:20px}
+.feature-row-content p{font-size:0.88rem;font-weight:300;line-height:1.85;color:var(--muted)}
+.feature-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.feature-tags span{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--rose);border:1px solid var(--rose-light);padding:5px 14px;border-radius:100px}
+.promise{padding:96px 80px;background:var(--ink)}
+.promise .sec-head h2,.promise .sec-head p{color:#fff}.promise .sec-head .label{color:var(--rose-light)}
+.promise .sec-head p{color:rgba(255,255,255,0.55)}
+.promise-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:56px}
+.promise-item{text-align:center;padding:0 12px}
+.promise-item .pi-icon{font-family:var(--serif);font-style:italic;font-size:1.9rem;color:var(--rose-light);margin-bottom:16px;display:block}
+.promise-item h4{font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;margin-bottom:10px}
+.promise-item p{font-size:0.82rem;font-weight:300;line-height:1.7;color:rgba(255,255,255,0.5)}
+
 /* ── Responsive ── */
 @media(max-width:1024px){
 nav{padding:0 32px}
@@ -283,6 +312,8 @@ nav{padding:0 32px}
 .ritual-grid{grid-template-columns:1fr;gap:40px}
 .newsletter{padding:64px 32px}
 .newsletter-form{flex-direction:column}.newsletter-form input,.newsletter-form button{width:100%}
+.feature-row{grid-template-columns:1fr}.feature-row.reverse .feature-row-img{order:0}.feature-row-img{height:340px}.feature-row-content{padding:56px 32px}
+.ing-intro{padding:64px 32px 16px}.promise{padding:72px 32px}.promise-grid{grid-template-columns:1fr 1fr;gap:36px 24px}
 }
 @media(max-width:640px){
 .ing-grid{grid-template-columns:1fr}
@@ -299,6 +330,7 @@ nav{padding:0 32px}
     <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
     <li><a onclick="showPage('about')" id="nav-about">Our Story</a></li>
     <li><a onclick="showPage('products')" id="nav-products">Products</a></li>
+    <li><a onclick="showPage('ingredients')" id="nav-ingredients">Ingredients</a></li>
     <li><a onclick="showPage('contact')" id="nav-contact" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
@@ -697,6 +729,99 @@ nav{padding:0 32px}
   <div id="footer-products"></div>
 </div>
 
+<!-- ══════ INGREDIENTS ══════ -->
+<div class="page" id="page-ingredients">
+  <div class="ing-hero">
+    <img src="images/new/banner-rose.jpg" alt="Lunavée ingredients">
+    <div class="ing-hero-overlay"></div>
+    <h1>The Ingredients</h1>
+    <p>Every active, and the science behind it</p>
+  </div>
+
+  <div class="ing-intro">
+    <h2>We formulate by <em>concern</em>,<br>not by trend</h2>
+    <p>Behind the petals and the slow ritual is serious skincare. Every Lunavée formula starts with a real skin concern, then earns its way back with proven, well-tolerated actives — many of them face-grade. Here's what's doing the work, and why it matters.</p>
+  </div>
+
+  <section class="feature-row alt">
+    <div class="feature-row-img"><img src="images/new/lotion-1.jpg" alt="Niacinamide"></div>
+    <div class="feature-row-content">
+      <div class="feature-num">01</div>
+      <div class="sub">The all-rounder · in every formula</div>
+      <h3>Niacinamide</h3>
+      <p>Often called the "do-everything" vitamin — and ours is renewable-grade and exceptionally well tolerated. It works on several fronts at once: reinforcing the skin barrier by boosting its own ceramides and lipids, defending against UV, blue light and pollution, evening tone by limiting melanin transfer, refining the look of blemishes, and supporting firmness over time.</p>
+      <div class="feature-tags"><span>Brightening</span><span>Barrier</span><span>Anti-pollution</span><span>Texture</span></div>
+    </div>
+  </section>
+
+  <section class="feature-row reverse">
+    <div class="feature-row-img"><img src="images/new/texture-swatch.jpg" alt="Triple ceramides"></div>
+    <div class="feature-row-content">
+      <div class="feature-num">02</div>
+      <div class="sub">Body Lotion · SK-INFLUX®</div>
+      <h3>Triple Ceramides</h3>
+      <p>We don't just add one ceramide — we rebuild the barrier the way skin builds it. A precise blend of ceramides 1, 3 and 6-II with cholesterol, free fatty acids and phytosphingosine recreates the same multi-layer "liquid-crystal" structure as skin's own lipids: the anchor (Cer 1) locks the layers together, the guardian (Cer 3) prevents water loss, and the coordinator (Cer 6-II) keeps renewal smooth.</p>
+      <div class="feature-tags"><span>Barrier Repair</span><span>Anti-moisture-loss</span><span>Calming</span></div>
+    </div>
+  </section>
+
+  <section class="feature-row alt">
+    <div class="feature-row-img"><img src="images/new/roses-field.jpg" alt="Real flower petals"></div>
+    <div class="feature-row-content">
+      <div class="feature-num">03</div>
+      <div class="sub">Body Wash &amp; Scrub · fresh-preserved</div>
+      <h3>Real Flower Petals</h3>
+      <p>Most "floral" products rely on fragrance alone. We use a fresh-preservation technique that locks real rose, jasmine and camellia petals at their peak — so the actual petal stays intact and active in the gel, unaffected by heat or light. Rose is deeply calming, too: its naturally occurring linalool and geraniol are linked to easing tension and restful sleep, while hydrating and brightening the skin.</p>
+      <div class="feature-tags"><span>Soothing</span><span>Calming</span><span>Hydrating</span></div>
+    </div>
+  </section>
+
+  <section class="feature-row reverse">
+    <div class="feature-row-img"><img src="images/new/rose-wash-1.jpg" alt="Lotus flower water"></div>
+    <div class="feature-row-content">
+      <div class="feature-num">04</div>
+      <div class="sub">Body Lotion · patented signature</div>
+      <h3>Nine-Grade Lotus Water</h3>
+      <p>Our self-developed, patented extract from Taiwanese nine-grade scented lotus — bred over decades and grown pesticide-free. Rich in lotus amino acids, polysaccharides and polyphenols, it delivers antioxidant protection on par with vitamin C, holds moisture in the skin, and helps improve elasticity and tone. It's the same lotus family prized by luxury houses like Fresh and Kenzo.</p>
+      <div class="feature-tags"><span>Antioxidant</span><span>Hydrating</span><span>Tone</span></div>
+    </div>
+  </section>
+
+  <section class="ingredients-sec" style="background:#fff">
+    <div class="sec-head">
+      <div class="label">The Supporting Cast</div>
+      <h2>Quietly doing<br><em>the hard work</em></h2>
+    </div>
+    <div class="ing-grid">
+      <div class="ing-card"><span class="ing-icon">Aa</span><h3>Alpha-Arbutin</h3><span class="ing-tag">— dark spots</span><p>A gentle brightener that interrupts melanin to fade discoloration without irritation.</p></div>
+      <div class="ing-card"><span class="ing-icon">Tx</span><h3>Tranexamic Acid</h3><span class="ing-tag">— stubborn marks</span><p>Evens out post-blemish marks and uneven patches; pairs with niacinamide for radiance.</p></div>
+      <div class="ing-card"><span class="ing-icon">Ha</span><h3>Hyaluronic Acid</h3><span class="ing-tag">— dehydration</span><p>Multi-weight molecules hold water deep in the skin for lasting, plumping hydration.</p></div>
+      <div class="ing-card"><span class="ing-icon">Ce</span><h3>Centella Asiatica</h3><span class="ing-tag">— sensitivity</span><p>Known as "plant collagen" — calms, supports healing and strengthens a stressed barrier.</p></div>
+      <div class="ing-card"><span class="ing-icon">Oa</span><h3>Oat Lipid-e</h3><span class="ing-tag">— irritation</span><p>Swedish oat with ~10% skin-identical lipids and ceramides — the skin's "fire extinguisher".</p></div>
+      <div class="ing-card"><span class="ing-icon">Sh</span><h3>Shea Butter &amp; Squalane</h3><span class="ing-tag">— dryness</span><p>Rich plant butter and skin-identical squalane form a soft, breathable protective veil.</p></div>
+      <div class="ing-card"><span class="ing-icon">Sa</span><h3>Salicylic Acid &amp; Papain</h3><span class="ing-tag">— rough, bumpy skin</span><p>BHA and fruit enzyme dissolve buildup and unclog pores to smooth "chicken skin".</p></div>
+      <div class="ing-card"><span class="ing-icon">Gr</span><h3>French Grape-Seed</h3><span class="ing-tag">— dullness</span><p>A vineyard by-product rich in OPC antioxidants — a gentle, natural physical polish.</p></div>
+      <div class="ing-card"><span class="ing-icon">Sn</span><h3>Snow Lotus &amp; Edelweiss</h3><span class="ing-tag">— environmental stress</span><p>High-altitude botanicals that soothe, defend against UV and pollution, and brighten.</p></div>
+    </div>
+  </section>
+
+  <section class="promise">
+    <div class="sec-head">
+      <div class="label">Our Formulation Promise</div>
+      <h2>Considered, <em>not crowded</em></h2>
+      <p>A short list of actives that each earn their place — chosen for what your skin actually needs.</p>
+    </div>
+    <div class="promise-grid">
+      <div class="promise-item"><span class="pi-icon">✓</span><h4>Dermatologist Tested</h4><p>Every formula tested for tolerance, including on sensitive skin.</p></div>
+      <div class="promise-item"><span class="pi-icon">❋</span><h4>Real Botanicals</h4><p>Genuine flower extracts and petals — not fragrance stand-ins.</p></div>
+      <div class="promise-item"><span class="pi-icon">◇</span><h4>Skin-Identical</h4><p>Ceramides, squalane and lipids that mirror skin's own structure.</p></div>
+      <div class="promise-item"><span class="pi-icon">♢</span><h4>Concern-Led</h4><p>Formulated to answer real concerns, never to pad a label.</p></div>
+    </div>
+  </section>
+
+  <div id="footer-ingredients"></div>
+</div>
+
 <!-- ══════ CONTACT ══════ -->
 <div class="page" id="page-contact">
   <div class="contact-hero">
@@ -738,14 +863,14 @@ function buildFooter(){
   return `<footer>
     <div class="footer-top">
       <div><span class="footer-logo">Lunavée</span><p class="footer-desc">Slow beauty, radiant always. Born from a quiet rebellion — every bottle is an invitation to slow down.</p></div>
-      <div><div class="footer-col-title">Navigate</div><div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('about')">Our Story</a><a onclick="showPage('products')">Products</a><a onclick="showPage('contact')">Contact</a></div></div>
+      <div><div class="footer-col-title">Navigate</div><div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('about')">Our Story</a><a onclick="showPage('products')">Products</a><a onclick="showPage('ingredients')">Ingredients</a><a onclick="showPage('contact')">Contact</a></div></div>
       <div><div class="footer-col-title">Collections</div><div class="footer-links"><a onclick="showSeries('rose',null);showPage('products')">Rose Amour</a><a onclick="showSeries('jasmine',null);showPage('products')">Jasmine Garden</a><a onclick="showSeries('camellia',null);showPage('products')">Camellia Gold</a></div></div>
       <div><div class="footer-col-title">Connect</div><div class="footer-links"><a href="https://www.instagram.com/lunavee_id" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@lunavee_official" target="_blank" rel="noopener">TikTok</a><a href="https://id.shp.ee/dq837A2" target="_blank" rel="noopener">Shopee</a><a href="https://wa.me/6285591626589" target="_blank" rel="noopener">WhatsApp</a></div></div>
     </div>
     <div class="footer-bottom"><span class="footer-copy">© 2026 Lunavée. All rights reserved.</span><span class="footer-copy">Voice of Your Glow.</span></div>
   </footer>`;
 }
-['home','about','products','contact'].forEach(p=>{document.getElementById('footer-'+p).innerHTML=buildFooter();});
+['home','about','products','ingredients','contact'].forEach(p=>{document.getElementById('footer-'+p).innerHTML=buildFooter();});
 
 function showPage(p){
   document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
