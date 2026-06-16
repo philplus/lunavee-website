@@ -97,16 +97,12 @@ nav.scrolled{box-shadow:0 2px 40px rgba(44,31,36,0.08)}
 
 /* ── Reviews ── */
 .reviews{padding:100px 80px;background:#fff}
-.reviews-grid{display:grid;grid-template-columns:0.85fr 2fr;gap:60px;align-items:center}
-.reviews-stat{text-align:left}
-.reviews-stat .big{font-family:var(--serif);font-size:4.2rem;font-weight:300;color:var(--rose);line-height:1}
-.reviews-stat .big small{font-size:1.6rem}
-.reviews-stat .sub{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-top:10px}
-.reviews-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.review-card{background:var(--blush);padding:32px 28px;border-radius:12px;display:flex;flex-direction:column;gap:14px}
-.review-stars{color:var(--rose);letter-spacing:3px;font-size:0.8rem}
-.review-text{font-size:0.85rem;font-weight:300;line-height:1.75;color:var(--ink)}
-.review-author{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:auto}
+.reviews-imgs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.review-shot{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 10px 34px rgba(44,31,36,.07);transition:transform .4s,box-shadow .4s}
+.review-shot:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(44,31,36,.12)}
+.review-shot img{width:100%;height:auto;display:block}
+.reviews-foot{text-align:center;margin-top:38px;font-size:.78rem;font-weight:300;letter-spacing:.04em;color:var(--muted)}
+.reviews-foot span{color:var(--rose);letter-spacing:2px}
 
 /* ── Gift / packaging ── */
 .packaging-section{display:grid;grid-template-columns:1fr 1fr;min-height:540px}
@@ -273,7 +269,7 @@ nav{padding:0 32px}
 .philosophy-content,.texture-content,.packaging-content,.series-banner-content,.about-story-text{padding:56px 32px}
 .mission-strip{padding:72px 32px;gap:48px}
 .texture-img,.series-banner-img,.about-story-img{height:380px}
-.reviews-grid{grid-template-columns:1fr;gap:40px}.reviews-cards{grid-template-columns:1fr}
+.reviews-imgs{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
 .product-detail-card{border-right:none}
 .stats-row{grid-template-columns:1fr}.stat-block{border-right:none;border-bottom:1px solid var(--border)}
 .values-grid{grid-template-columns:1fr 1fr}
@@ -502,30 +498,17 @@ nav{padding:0 32px}
 
   <!-- Reviews -->
   <section class="reviews">
-    <div class="reviews-grid">
-      <div class="reviews-stat">
-        <div class="label">User Review</div>
-        <div class="big">99.99<small>%</small></div>
-        <div class="sub">Repurchase Rate</div>
-      </div>
-      <div class="reviews-cards">
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">The rose petals actually float in the gel — it feels like a spa every morning. My skin looks calmer after two weeks.</p>
-          <div class="review-author">— Aisyah R.</div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">Body lotion absorbs instantly, zero stickiness, and the whitening claim is real on my elbows. Already on my second bottle.</p>
-          <div class="review-author">— Nurul H.</div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">The ice-cream scrub is the gentlest I've used. Smells divine and leaves my skin soft for days. Worth every cent.</p>
-          <div class="review-author">— Mei Ling</div>
-        </div>
-      </div>
+    <div class="sec-head">
+      <div class="label">Real Reviews</div>
+      <h2>Loved by our <em>community</em></h2>
+      <p>Genuine five-star reviews from customers on Shopee — petals, texture and glow, in their own words.</p>
     </div>
+    <div class="reviews-imgs">
+      <div class="review-shot"><img src="images/new/review-1.jpg" alt="Five-star Shopee review of Lunavée Brightening Body Scrub"></div>
+      <div class="review-shot"><img src="images/new/review-2.jpg" alt="Five-star Shopee review of Lunavée Rose Flowers Body Wash and Scrub"></div>
+      <div class="review-shot"><img src="images/new/review-3.jpg" alt="Five-star Shopee review of Lunavée Rose Flowers Body Wash"></div>
+    </div>
+    <div class="reviews-foot"><span>★★★★★</span> &nbsp;Verified five-star reviews from Shopee</div>
   </section>
 
   <!-- FAQ -->
@@ -722,9 +705,10 @@ nav{padding:0 32px}
       <h1 class="contact-title">Let's begin your<br><em>radiant ritual</em><br>together</h1>
       <p class="contact-tagline">Whether you're a retailer, distributor, or simply someone who wants to know more — we'd love to hear from you.</p>
       <div class="contact-info-items">
-        <div class="contact-info-row"><div class="contact-info-icon">✉</div><div><div class="contact-info-label">Email</div><div class="contact-info-value"><a href="mailto:hello@lunavee-global.com">hello@lunavee-global.com</a></div></div></div>
-        <div class="contact-info-row"><div class="contact-info-icon">◎</div><div><div class="contact-info-label">Instagram</div><div class="contact-info-value"><a href="https://www.instagram.com/lunavee_official" target="_blank" rel="noopener">@lunavee_official</a></div></div></div>
-        <div class="contact-info-row"><div class="contact-info-icon">◈</div><div><div class="contact-info-label">TikTok</div><div class="contact-info-value"><a href="https://www.tiktok.com/@lunavee" target="_blank" rel="noopener">@lunavee</a></div></div></div>
+        <div class="contact-info-row"><div class="contact-info-icon">✆</div><div><div class="contact-info-label">WhatsApp</div><div class="contact-info-value"><a href="https://wa.me/6285591626589" target="_blank" rel="noopener">+62 855-9162-6589</a></div></div></div>
+        <div class="contact-info-row"><div class="contact-info-icon">◎</div><div><div class="contact-info-label">Instagram</div><div class="contact-info-value"><a href="https://www.instagram.com/lunavee_id" target="_blank" rel="noopener">@lunavee_id</a></div></div></div>
+        <div class="contact-info-row"><div class="contact-info-icon">◈</div><div><div class="contact-info-label">TikTok</div><div class="contact-info-value"><a href="https://www.tiktok.com/@lunavee_official" target="_blank" rel="noopener">@lunavee_official</a></div></div></div>
+        <div class="contact-info-row"><div class="contact-info-icon">▦</div><div><div class="contact-info-label">Shopee</div><div class="contact-info-value"><a href="https://id.shp.ee/dq837A2" target="_blank" rel="noopener">Lunavée Official Store</a></div></div></div>
       </div>
     </div>
     <div class="contact-form-wrap">
@@ -744,7 +728,7 @@ nav{padding:0 32px}
   </div>
   <div class="social-strip">
     <div class="social-strip-text">Follow our journey<br>on social media</div>
-    <div class="social-links"><a class="social-link" href="https://www.instagram.com/lunavee_official" target="_blank" rel="noopener">IG</a><a class="social-link" href="https://www.tiktok.com/@lunavee" target="_blank" rel="noopener">TK</a></div>
+    <div class="social-links"><a class="social-link" href="https://www.instagram.com/lunavee_id" target="_blank" rel="noopener">IG</a><a class="social-link" href="https://www.tiktok.com/@lunavee_official" target="_blank" rel="noopener">TT</a><a class="social-link" href="https://id.shp.ee/dq837A2" target="_blank" rel="noopener">SH</a><a class="social-link" href="https://wa.me/6285591626589" target="_blank" rel="noopener">WA</a></div>
   </div>
   <div id="footer-contact"></div>
 </div>
@@ -756,7 +740,7 @@ function buildFooter(){
       <div><span class="footer-logo">Lunavée</span><p class="footer-desc">Slow beauty, radiant always. Born from a quiet rebellion — every bottle is an invitation to slow down.</p></div>
       <div><div class="footer-col-title">Navigate</div><div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('about')">Our Story</a><a onclick="showPage('products')">Products</a><a onclick="showPage('contact')">Contact</a></div></div>
       <div><div class="footer-col-title">Collections</div><div class="footer-links"><a onclick="showSeries('rose',null);showPage('products')">Rose Amour</a><a onclick="showSeries('jasmine',null);showPage('products')">Jasmine Garden</a><a onclick="showSeries('camellia',null);showPage('products')">Camellia Gold</a></div></div>
-      <div><div class="footer-col-title">Connect</div><div class="footer-links"><a href="https://www.instagram.com/lunavee_official" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@lunavee" target="_blank" rel="noopener">TikTok</a><a href="mailto:hello@lunavee-global.com">Email Us</a></div></div>
+      <div><div class="footer-col-title">Connect</div><div class="footer-links"><a href="https://www.instagram.com/lunavee_id" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@lunavee_official" target="_blank" rel="noopener">TikTok</a><a href="https://id.shp.ee/dq837A2" target="_blank" rel="noopener">Shopee</a><a href="https://wa.me/6285591626589" target="_blank" rel="noopener">WhatsApp</a></div></div>
     </div>
     <div class="footer-bottom"><span class="footer-copy">© 2026 Lunavée. All rights reserved.</span><span class="footer-copy">Voice of Your Glow.</span></div>
   </footer>`;
